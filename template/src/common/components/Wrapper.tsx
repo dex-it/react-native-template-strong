@@ -1,5 +1,5 @@
 import React, {useMemo} from "react";
-import {Constructor, StyleSheet, ViewStyle, VirtualizedListWithoutRenderItemProps} from "react-native";
+import {StyleSheet, ViewStyle, VirtualizedListWithoutRenderItemProps} from "react-native";
 import {EmptyView} from "./EmptyView";
 import {defaultKeyIdExtractor} from "../helpers/defaultKeyIdExtractor";
 import {isAndroid} from "~/core/theme/commonConsts";
@@ -25,7 +25,7 @@ export interface IWrapperProps {
 }
 
 interface IProps<T> extends IWrapperProps {
-  Component: Constructor<React.Component<T>>;
+  Component: React.ComponentType<T>;
   props: T;
   isLoading: boolean;
   tryAgain?: () => void;

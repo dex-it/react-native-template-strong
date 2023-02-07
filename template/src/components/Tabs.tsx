@@ -12,7 +12,8 @@ import {
 } from "react-native-tab-view";
 import {windowWidth} from "~/core/theme/commonConsts";
 import {StyleProp, StyleSheet, TextStyle} from "react-native";
-import {NavigationState, Scene, SceneRendererProps} from "react-native-tab-view/lib/typescript/types";
+import {NavigationState, SceneRendererProps} from "react-native-tab-view";
+import {Scene} from "react-native-tab-view/lib/typescript/src/types";
 import {CommonStyles} from "~/core/theme/commonStyles";
 import {ThemeColors} from "~/core/theme/colors";
 import {CommonSizes} from "~/core/theme/commonSizes";
