@@ -17,17 +17,19 @@
 #import <React/RCTI18nUtil.h>
 #import <ReactNativeNavigation/ReactNativeNavigation.h>
 #import "Orientation.h"
-#import "Splash.h"
+#import "splash.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  if (!self.bridge) {
+    self.bridge = [self createBridgeWithDelegate:self launchOptions:launchOptions];
+  }
   // if ([FIRApp defaultApp] == nil) {
   //   [FIRApp configure];
   // }
   RCTBridge *bridge = super.bridge;
-  self.moduleName = @"HelloWorld";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
@@ -45,7 +47,7 @@
 
   [Orientation setOrientation:(UIInterfaceOrientationMask)UIInterfaceOrientationMaskPortrait];
 
-  return [super application:application didFinishLaunchingWithOptions:launchOptions];;
+  return YES;
 }
 
 // Bridge url to connect on specified host
